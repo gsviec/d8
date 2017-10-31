@@ -1,1 +1,0 @@
-{"virtualbox":{"/var/www/":{"owner":"vagrant","group":"vagrant","guestpath":"/var/www","hostpath":"/home/thientd/github/d8/app","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/thientd/github/d8","disabled":false,"__vagrantfile":true}}}
