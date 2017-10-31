@@ -58,11 +58,20 @@ $databases['default']['default'] = array (
   'username' => 'phanbook',
   'password' => 'secret',
   'prefix' => '',
-  'host' => 'mysql',
+  'host' => '127.0.0.1',
   'port' => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
 );
 $settings['hash_salt'] = 'QY5Xb7bjmrgAoZhQPfVu692zGrY2j0Xqp7rpesM7kc9NqoiGLtaJM2F7vYWdIBVwmZcn-wm7IA';
 $settings['install_profile'] = 'standard';
+
 $config_directories['sync'] = 'sites/default/files/config_cbwEi3TQsL7kAUnTP-nzCafvUvh5ih9Udwboq-kV8u-EwfAkKQTCoymGV0nylTjtNzbWrGvM2g/sync';
+
+$config['system.logging']['error_level'] = 'verbose';
+
+/**
+ * Disable CSS and JS aggregation.
+ */
+$config['system.performance']['css']['preprocess'] = FALSE;
+$config['system.performance']['js']['preprocess'] = FALSE;

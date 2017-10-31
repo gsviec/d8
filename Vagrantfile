@@ -42,15 +42,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       end
   end
 
-  if Vagrant.has_plugin?('vagrant-vbguest')
-      config.vbguest.auto_update = true
-  end
+  # if Vagrant.has_plugin?('vagrant-vbguest')
+  #     config.vbguest.auto_update = true
+  # end
+  config.vbguest.auto_update = false
 
   config.vm.provider "virtualbox" do |vb|
       vb.gui = false
       vb.customize ['modifyvm', :id, '--memory', 2048]
       vb.customize ["modifyvm", :id, "--cpus", 2]
-      vb.customize ["modifyvm", :id, "--name", "vagrant-centos-lemp-playground"]
+      vb.customize ["modifyvm", :id, "--name", "vagrant-centos-lemp"]
   end
 
   config.vm.provider "parallels" do |v|
@@ -73,7 +74,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Run the provisioning
   config.vm.provision "ansible_local" do |ansible|
-      ansible.playbook = "ansible/playbook.yml"
+      ansible.playbook = "ansible/playbook-db.yml"
       ansible.sudo = true
   end
 

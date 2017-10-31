@@ -4,16 +4,16 @@
   - Restart the mariadb service
 - name: Create a new database with name 'demo_loadbanlancer_wp_gsviec'
   mysql_db:
-    name: demo_loadbanlancer_wp_gsviec
+    name: "{{ drupal_db_name }}"
     state: present
 
 # Copy database dump file to remote host and restore it to database 'my_db'
-- name: Copy database dump file
-  copy:
-    src: files/demo_loadbanlancer_wp_gsviec.sql
-    dest: /tmp/
-- name: Restore database
-  mysql_db:
-    name: demo_loadbanlancer_wp_gsviec
-    state: import
-    target: /tmp/demo_loadbanlancer_wp_gsviec.sql
+# - name: Copy database dump file
+#   copy:
+#     src: files/demo_loadbanlancer_wp_gsviec.sql
+#     dest: /tmp/
+# - name: Restore database
+#   mysql_db:
+#     name: demo_loadbanlancer_wp_gsviec
+#     state: import
+#     target: /tmp/demo_loadbanlancer_wp_gsviec.sql
