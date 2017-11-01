@@ -65,6 +65,6 @@ $databases['default']['default'] = array (
 );
 $settings['hash_salt'] = 'DIZ61xHmouHVD0p8QceZfed9HE7EbbFaq9qkBSeF10wChnkaKFzY0wuuqWTFsxBppK-oDsEF7A';
 $settings['install_profile'] = 'standard';
-$config_directories['sync'] = 'sites/default/files/config_7tfmf-vcJcfqddz2zJr6HfkD3yxZP5yx2mK_hwhAlJGpIIg4ynzbrcbbqf0cXNUe64IYx2kyoA/sync';
-
+//$config_directories['sync'] = 'sites/default/files/config_7tfmf-vcJcfqddz2zJr6HfkD3yxZP5yx2mK_hwhAlJGpIIg4ynzbrcbbqf0cXNUe64IYx2kyoA/sync';
+$config_directories[CONFIG_SYNC_DIRECTORY] = 'sites/default/sync';
 $config['system.logging']['error_level'] = 'verbose';
