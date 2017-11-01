@@ -69,12 +69,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   if OS.windows?
     config.vm.synced_folder ".", "/var/www/", type: "nfs"
   else
-    config.vm.synced_folder ".", "/var/www/", :owner => "vagrant", :group => "vagrant"
+    config.vm.synced_folder ".", "/var/www/", :owner => "vagrant", :group => "vagrant", :mount_options => ['dmode=777,fmode=777']
+
   end
+  ansible_inventory_dir = "ansible/hosts"
 
   # Run the provisioning
-  config.vm.provision "ansible_local" do |ansible|
-      ansible.playbook = "ansible/playbook-db.yml"
+  config.vm.provision "ansible" do |ansible|
+      #ansible.inventory_path = "#{ansible_inventory_dir}/vagrant"
+      ansible.playbook = "ansible/playbook.yml"
       ansible.sudo = true
   end
 

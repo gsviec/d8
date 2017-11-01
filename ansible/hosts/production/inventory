@@ -9,6 +9,7 @@ web02
 
 [db]
 db1
+ha1
 
 [haproxy]
 ha1

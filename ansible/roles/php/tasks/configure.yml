@@ -7,3 +7,9 @@
     dest=/etc/php-fpm.d/www.conf
   notify:
     - restart php-fpm
+    
+- name: Install drush
+  shell: |
+    wget https://github.com/drush-ops/drush/releases/download/8.1.15/drush.phar -O drush.phar
+    mv drush.phar /usr/bin/drush
+    chmod +x /usr/bin/drush
