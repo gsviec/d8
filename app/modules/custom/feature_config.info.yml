@@ -1,0 +1,6 @@
+name: config
+description: 'This tracking config server'
+type: module
+core: 8.x
+version: 8.x-1.0
+package: feature

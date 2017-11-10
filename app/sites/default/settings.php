@@ -55,23 +55,16 @@
  */
 $databases['default']['default'] = array (
   'database' => 'phanbook',
-  'username' => 'phanbook',
-  'password' => 'secret',
+  'username' => 'root',
+  'password' => '',
   'prefix' => '',
-  'host' => '127.0.0.1',
+  'host' => 'localhost',
   'port' => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
 );
-$settings['hash_salt'] = 'QY5Xb7bjmrgAoZhQPfVu692zGrY2j0Xqp7rpesM7kc9NqoiGLtaJM2F7vYWdIBVwmZcn-wm7IA';
+$settings['hash_salt'] = 'DIZ61xHmouHVD0p8QceZfed9HE7EbbFaq9qkBSeF10wChnkaKFzY0wuuqWTFsxBppK-oDsEF7A';
 $settings['install_profile'] = 'standard';
-
-$config_directories['sync'] = 'sites/default/files/config_cbwEi3TQsL7kAUnTP-nzCafvUvh5ih9Udwboq-kV8u-EwfAkKQTCoymGV0nylTjtNzbWrGvM2g/sync';
-
+//$config_directories['sync'] = 'sites/default/files/config_7tfmf-vcJcfqddz2zJr6HfkD3yxZP5yx2mK_hwhAlJGpIIg4ynzbrcbbqf0cXNUe64IYx2kyoA/sync';
+$config_directories[CONFIG_SYNC_DIRECTORY] = 'sites/default/sync';
 $config['system.logging']['error_level'] = 'verbose';
-
-/**
- * Disable CSS and JS aggregation.
- */
-$config['system.performance']['css']['preprocess'] = FALSE;
-$config['system.performance']['js']['preprocess'] = FALSE;

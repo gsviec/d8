@@ -1,7 +1,7 @@
-- hosts: db
+- hosts: all
   become: true
   roles:
-    - basics
+    # - basics
     - mariadb
   
   
